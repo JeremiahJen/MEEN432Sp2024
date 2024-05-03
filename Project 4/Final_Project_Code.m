@@ -10,9 +10,9 @@ path.radius = track_radius;
 [xp,yp] = trackinfo(track_length,track_radius,0,delta_s,delta_theta);
 
 set_param('Final_Project', 'StopTime', '3600')
+simout = sim("Final_Project.slx");
 X = simout.X.data;
 Y = simout.Y.data;
-simout = sim("Final_Project.slx");
 stats = raceStat(X,Y,simout.tout,path,simout);
 disp(stats)
 
